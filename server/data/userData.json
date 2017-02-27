@@ -1,0 +1,11 @@
+{
+    "users":[{
+        "firstName":"",
+        "lastName":"",
+        "email":"",
+        "password":"",
+        "userCrops":[{
+
+        }]
+    }]
+}

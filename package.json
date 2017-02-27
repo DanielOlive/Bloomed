@@ -1,0 +1,24 @@
+{
+  "name": "bloomed",
+  "version": "1.0.0",
+  "description": "This product keeps track of when crops should be planted through the year and can also be used as a crop database ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --harmony server/server.js"
+  },
+  "author": "Daniel De Oliveira",
+  "license": "ISC",
+  "dependencies": {
+    "co-body": "^4.2.0",
+    "koa": "^1.2.4",
+    "koa-router": "^5.4.0",
+    "koa-static": "^2.1.0",
+    "lodash": "^4.17.4",
+    "nodemon": "^1.11.0",
+    "rethinkdb": "^2.3.3"
+  },
+  "devDependencies": {
+    "webpack": "^2.2.1"
+  }
+}
