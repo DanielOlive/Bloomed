@@ -10,7 +10,7 @@ var http = require('http');
 
 //routes
 
-let directoryRoutes = require('./routes/directory');
+let directoryRoutes = require('./routes').directory;
 
 
 //load config file here
@@ -31,12 +31,28 @@ app.use(createConnection);
   .use(router.allowedMethods());*/
 
 app.use(route.routes());
+    // .use(route.allowedMethods());
 
 
 //define routes
-route.get('/', directoryRoutes.getList);
-route.post('/directory/add', directoryRoutes.add);
-route.get('/directory/create', createVegetable);
+
+// GET     /users             ->  index
+// GET     /users/new         ->  new
+// POST    /users             ->  create
+// GET     /users/:user       ->  show
+// GET     /users/:user/edit  ->  edit
+// PUT     /users/:user       ->  update
+// DELETE  /users/:user       ->  destroy
+
+route.get('/directory', directoryRoutes.getList);
+route.get('/directory/item/:id', directoryRoutes.getItem);
+route.post('/directory/create', directoryRoutes.create);
+route.post('/directory/edit', directoryRoutes.edit);
+route.post('/directory/remove', directoryRoutes.remove);
+
+
+// route.get('/directory/create', directoryRoutes.add);
+
 
 /*router.get('/', function*(){
     this.body = 'Hello World!';
@@ -44,6 +60,7 @@ route.get('/directory/create', createVegetable);
 
 //close the rethinkDB connection
 app.use(closeConnection);
+
 
 // Retrieve all todos
 function* getDirectory(next) {
@@ -75,6 +92,9 @@ function* insertDirectory(next) {
 }
 
 function * createVegetable(next){
+    // console.log(this)
+    var list = yield parse(this);
+    console.log(list.id);
     try{
          /*var todo = yield parse(this);
         todo.createdAt = r.now(); // Set the field `createdAt` to the current time
@@ -83,11 +103,11 @@ function * createVegetable(next){
         todo = result.changes[0].new_val; // todo now contains the previous todo + a field `id` and `createdAt`
         this.body = JSON.stringify(todo);*/
 
-var cursor = yield r.table('directory').get('vegetables').run(this._rdbConn);
+//var cursor = yield r.table('directory').get('vegetables').run(this._rdbConn);
         // var result = yield cursor.toArray();
         // this.body = JSON.stringify(result);
 
-        var result = cursor;
+        //var result = cursor;
         this.body = JSON.stringify(result);
 
     }

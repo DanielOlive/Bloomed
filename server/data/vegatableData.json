@@ -1,64 +1,86 @@
 {
-    "vegetables": [
+  "vegetables": [
+    {
+      "name": "Tomatoes",
+      "type": "Vegetable",
+      "varieties": [
         {
-            "name":"Tomatoes",
-            "type": "Vegetable",
-            "varieties":[{
-                "title":"Cersie - Cherry Tomato",
-                "perennial": false,
-                "requiresCover": false,
-                "protect":[],
-                "description":"The smallest variety, producing sweet tasting red tomatoes. Delicious eaten raw or cooked, very popular with children.",
-                "instuctions":"Sow seeds 1.5cm deep in pots or trays of moist compost, be careful not to over-water. Store in a warm location at an approx. temperature of 18˚c",
-                "sowIndoors":[3,4],
-                "sowOutdoors":[],
-                "prune":[],
-                "plant":[],
-                "harvest":[6,7,8,9,10],
-                "training":[],
-                "problems":[],
-                "plantingDistance":"",
-                "sowDate":[],
-                "plantedDate":[],
-                "images":[{
-                    "url":"",
-                    "title":"",
-                    "rights":"",
-                    "cover":false
-                }]
-            }]
+          "description": "The smallest variety, producing sweet tasting red tomatoes. Delicious eaten raw or cooked, very popular with children.",
+          "harvest": [
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "images": [
+            {
+              "cover": false,
+              "rights": "",
+              "title": "",
+              "url": ""
+            }
+          ],
+          "instuctions": "Sow seeds 1.5cm deep in pots or trays of moist compost, be careful not to over-water. Store in a warm location at an approx. temperature of 18˚c",
+          "perennial": false,
+          "plant": [],
+          "plantedDate": [],
+          "plantingDistance": "",
+          "problems": [],
+          "protect": [],
+          "prune": [],
+          "requiresCover": false,
+          "sowDate": [],
+          "sowIndoors": [
+            3,
+            4
+          ],
+          "sowOutdoors": [],
+          "title": "Cersie - Cherry Tomato",
+          "training": []
+        },
+        {
+          "name": "potato",
+          "type": "Vegetable",
+          "varieties": [
+            {
+              "description": "The smallest variety, producing sweet tasting red tomatoes. Delicious eaten raw or cooked, very popular with children.",
+              "harvest": [
+                6,
+                7,
+                8,
+                9,
+                10
+              ],
+              "images": [
+                {
+                  "cover": false,
+                  "rights": "",
+                  "title": "",
+                  "url": ""
+                }
+              ],
+              "instuctions": "Sow seeds 1.5cm deep in pots or trays of moist compost, be careful not to over-water. Store in a warm location at an approx. temperature of 18˚c",
+              "perennial": false,
+              "plant": [],
+              "plantedDate": [],
+              "plantingDistance": "",
+              "problems": [],
+              "protect": [],
+              "prune": [],
+              "requiresCover": false,
+              "sowDate": [],
+              "sowIndoors": [
+                3,
+                4
+              ],
+              "sowOutdoors": [],
+              "title": "King Edward",
+              "training": []
+            }
+          ]
         }
-    ],
-    "general":{
-        "months":["Jan", "Feb", "Mar", "Apr", "May" , "Jun" , "Jul" , "Aug" , "Sep" , "Oct", "Nov", "Dec"]
+      ]
     }
+  ]
 }
-
-{
-            "name":"potato",
-            "type": "Vegetable",
-            "varieties":[{
-                "title":"King Edward",
-                "perennial": false,
-                "requiresCover": false,
-                "protect":[],
-                "description":"The smallest variety, producing sweet tasting red tomatoes. Delicious eaten raw or cooked, very popular with children.",
-                "instuctions":"Sow seeds 1.5cm deep in pots or trays of moist compost, be careful not to over-water. Store in a warm location at an approx. temperature of 18˚c",
-                "sowIndoors":[3,4],
-                "sowOutdoors":[],
-                "prune":[],
-                "plant":[],
-                "harvest":[6,7,8,9,10],
-                "training":[],
-                "problems":[],
-                "plantingDistance":"",
-                "sowDate":[],
-                "plantedDate":[],
-                "images":[{
-                    "url":"",
-                    "title":"",
-                    "rights":"",
-                    "cover":false
-                }]
-            }]
-        }

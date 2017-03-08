@@ -1,11 +1,29 @@
 {
-    "users":[{
-        "firstName":"",
-        "lastName":"",
-        "email":"",
-        "password":"",
-        "userCrops":[{
-
-        }]
-    }]
+  "users": [
+    {
+      "email": "",
+      "firstName": "",
+      "lastName": "",
+      "password": "",
+      "vegetables": [
+        {
+          "name": "",
+          "parentId": "",
+          "varieties": [
+            {
+              "images": [
+                {
+                  "rights": "",
+                  "title": "",
+                  "url": ""
+                }
+              ],
+              "notes": [],
+              "sowed": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
