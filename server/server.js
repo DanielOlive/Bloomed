@@ -1,16 +1,17 @@
 var koa = require('koa');
 var path = require('path');
 
+
 //Middleware and helpers
 var parse = require('co-body');
 var serve = require('koa-static');
 var route = require('koa-router')();
-var r = require('rethinkdb');
+
 var http = require('http');
 
 //routes
-
 let directoryRoutes = require('./routes').directory;
+let userRoutes = require('./routes').user;
 
 
 //load config file here
@@ -31,24 +32,35 @@ app.use(createConnection);
   .use(router.allowedMethods());*/
 
 app.use(route.routes());
-    // .use(route.allowedMethods());
+// .use(route.allowedMethods());
 
 route.get('/directory', directoryRoutes.getList);
-route.get('/directory/item/:id', directoryRoutes.getItem);
+route.get('/directory/:id', directoryRoutes.getItemById);
+route.get('/directory/name/:name', directoryRoutes.getItemByName);
 route.post('/directory/create', directoryRoutes.create);
 route.post('/directory/edit', directoryRoutes.edit);
-route.post('/directory/remove', directoryRoutes.remove);
+route.del('/directory/remove/:id', directoryRoutes.remove);
+
+
+/*USER ROUTES*/
+route.get('/user', userRoutes.getList);
+route.get('/user/:id', userRoutes.getItemById);
+route.get('/user/name/:name', userRoutes.getItemByName);
+route.post('/user/create', userRoutes.create);
+route.post('/user/edit', userRoutes.edit);
+route.del('/user/remove/:id', userRoutes.remove);
+
 
 //close the rethinkDB connection
 app.use(closeConnection);
 
 //create a rethingDb connection and saveit in req._rdbConn
 function* createConnection(next) {
-    try{
-        var conn = yield r.connect(config.rethinkdb);
-        this._rdbConn = conn;
-    }
-    catch(err) {
+    try {
+        /*var conn = yield r.connect(config.rethinkdb);
+        this._rdbConn = conn;*/
+        
+    } catch (err) {
         this.status = 500;
         this.body = err.message || http.STATUS_CODES[this.status];
     }
@@ -56,7 +68,7 @@ function* createConnection(next) {
 }
 
 function* closeConnection(next) {
-    this._rdbConn.close();
+    // this._rdbConn.close();
 }
 
 function startKoa() {

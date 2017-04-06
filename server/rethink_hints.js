@@ -1,6 +1,6 @@
 // https://github.com/rethinkdb/rethinkdb-example-nodejs/blob/master/todo-angular-koa/app.js
 // https://medium.com/@fabianomonte/criando-um-crud-simples-com-koa-67d9b99a71b4#.gepl1euz9
-
+// https://www.tutorialspoint.com/koajs/koajs_database.htm
 
 r = require('rethinkdb')
 
