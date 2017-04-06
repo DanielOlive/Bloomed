@@ -1,7 +1,7 @@
 {
   "name": "bloomed",
   "version": "1.0.0",
-  "description": "This product keeps track of when crops should be planted through the year and can also be used as a crop database ",
+  "description": "This app is used to guide the growth cycle of fruits, herbs and vegetables. Users can track their garden progress and receive notification of when to sow, plant, prune and harvest.",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -22,7 +22,8 @@
     "nodemon": "^1.11.0",
     "path": "^0.12.7",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "react-router": "^4.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.24.0",
