@@ -2,28 +2,48 @@
   "name": "bloomed",
   "version": "1.0.0",
   "description": "This app is used to guide the growth cycle of fruits, herbs and vegetables. Users can track their garden progress and receive notification of when to sow, plant, prune and harvest.",
+  "license": "ISC",
   "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielOlive/Bloomed.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DanielOlive/Bloomed/issues"
+  },
+  "keywords": [
+    "koa",
+    "node",
+    "mongoDb"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "startServer": "nodemon --harmony server/server.js",
-    "start": "webpack-dev-server"
+    "build": "webpack-dev-server",
+    "start": "npm run build"
   },
   "author": "Daniel De Oliveira",
-  "license": "ISC",
   "dependencies": {
     "babel-loader": "^6.4.1",
     "co-body": "^4.2.0",
     "co-monk": "^1.0.0",
+    "css-loader": "^0.28.0",
+    "extract-text-webpack-plugin": "^2.1.0",
     "koa": "^1.2.4",
     "koa-router": "^5.4.0",
     "koa-static": "^2.1.0",
     "mongodb": "^2.2.24",
     "monk": "^4.0.0",
+    "node-sass": "^4.5.2",
     "nodemon": "^1.11.0",
     "path": "^0.12.7",
+    "prettier": "^1.2.2",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "react-router": "^4.0.0"
+    "react-router": "^4.0.0",
+    "react-router-dom": "^4.0.0",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.16.1"
   },
   "devDependencies": {
     "babel-core": "^6.24.0",
