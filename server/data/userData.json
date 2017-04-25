@@ -1,25 +1,35 @@
 {
-  "users": [
+  "email": "danielolive@gmail.com",
+  "firstName": "Daniel",
+  "lastName": "De Oliveira",
+  "privalages":"Admin",
+  "password": "",
+  "vegetables": [
     {
-      "email": "",
-      "firstName": "",
-      "lastName": "",
-      "password": "",
-      "vegetables": [
+      "name": "Tomatoes",
+      "parentId": "58c1138875d1d6de97e4d09f",
+      "varieties": [
         {
-          "name": "",
-          "parentId": "",
-          "varieties": [
+          "title": "Cersie - Cherry Tomato",
+          "id":"Tomato-1",
+          "images": [
             {
-              "images": [
-                {
-                  "rights": "",
-                  "title": "",
-                  "url": ""
-                }
-              ],
-              "notes": [],
-              "sowed": []
+              "title": "",
+              "url": "",
+              "file":"jpg"
+            }
+          ],
+          "notes": [],
+          "sowed": [
+            {
+              "date":"",
+              "note":""
+            }
+          ],
+          "planted": [
+            {
+              "date":"",
+              "note":""
             }
           ]
         }

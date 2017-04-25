@@ -1,9 +1,8 @@
 module.exports = {
-    rethinkdb: {
-        host: "localhost",
+    mongodb: {
+        host: "localhost/bloomed",
         port: 28015,
-        authKey: "",
-        db: "bloomed"
+        authKey: ""
     },
     koa: {
         port: 4000

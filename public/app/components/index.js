@@ -1,0 +1,1 @@
+export {GlobalNav} from './global-navigation/global-navigation';
