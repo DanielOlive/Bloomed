@@ -1,1 +1,2 @@
-export {GlobalNav} from './global-navigation/global-navigation';
+export { default as GlobalNav } from './global-navigation/Global-navigation';
+export { default as Footer } from './footer/Footer';
