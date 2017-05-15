@@ -5,7 +5,7 @@ import {
   Link,
 } from 'react-router-dom';
 
-import { GlobalNav, Footer } from './components/index';
+import { GlobalNav, Footer, GrowYourOwn, ItemOverview } from './components/index';
 
 const Home = () => (<h1>Home</h1>);
 const Settings = () => (<h1>Settings</h1>);
@@ -21,11 +21,13 @@ const App = () => (
   <Router>
     <div>
       <Route path="/menu" children={GlobalNav} />
-      <Route path="/footer" children={Footer} />
       <Route exact path="/" component={Home} />
       <Route path="/dashboard" component={Dashboard} />
-      <Route path="/dashboard/:section" render={({ match }) => <h2>{ match.params.section }</h2>} />
+      <Route exact path="/growyourown" component={GrowYourOwn} />
+      <Route path="/growyourown/:section" render={({ match }) => (<ItemOverview params={match.params.section} />)} />
+      <Route path="/dashboard/:section" render={({ match }) => <h6>{ match.params.section }</h6>} />
       <Route path="/settings" component={Settings} />
+      <Route path="/footer" children={Footer} />
     </div>
   </Router>
 );

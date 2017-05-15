@@ -32,7 +32,13 @@ app.use(createConnection);
   .use(router.allowedMethods());*/
 
 app.use(route.routes());
-// .use(route.allowedMethods());
+ //.use(route.allowedMethods());
+
+app.use(function *(){
+    this.set('Access-Control-Allow-Origin', '*');
+    //this.set('Access-Control-Allow-Origin'. 'http://localhost:3000');
+});
+
 
 route.get('/directory', directoryRoutes.getList);
 route.get('/directory/:id', directoryRoutes.getItemById);

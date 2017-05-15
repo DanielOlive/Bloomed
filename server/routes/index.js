@@ -1,2 +1,2 @@
-module.exports.directory = require ('./directory/directory.js');
-module.exports.user = require ('./user/user.js');
+module.exports.directory = require('./directory/directory.js');
+module.exports.user = require('./user/user.js');
