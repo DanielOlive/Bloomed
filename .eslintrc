@@ -5,11 +5,12 @@
     /*"prop-types": [2]*/
     "react/jsx-uses-vars": [2],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "react/no-children-prop": off
+    "react/no-children-prop": off,
+    "no-confusing-arrow": "error"
   },
   "globals": {
     "document": false
   },
-  "extends": ["airbnb"],
+  "extends": ["airbnb", "prettier" ],
   "plugins": ["react"]
 }

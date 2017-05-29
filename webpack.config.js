@@ -5,6 +5,12 @@ const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const PrettierPlugin = require('prettier-webpack-plugin');
+
+const PrettierConfig = new PrettierPlugin({
+  singleQuote: true,
+  extensions: ['.js', '.jsx'],
+});
 
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin(
   {
@@ -18,6 +24,7 @@ const extractScss = new ExtractTextPlugin({
   filename: '[name].[contenthash].css',
   disable: process.env.NODE_ENV === 'development',
 });
+
 
 module.exports = {
   devServer: {
@@ -46,11 +53,16 @@ module.exports = {
         loader: ExtractTextPlugin.extract({
           loader: [
             { loader: 'css-loader' },
-            { loader: 'sass-loader' },
+            { loader: 'sass-loader', options: {
+              sourceMap: true,
+              includePaths: [
+                path.resolve(__dirname, 'node_modules/foundation/scss'),
+              ]
+            }},
           ],
         }),
       },
     ],
   },
-  plugins: [HtmlWebpackPluginConfig, extractScss],
+  plugins: [HtmlWebpackPluginConfig, extractScss, PrettierConfig],
 };
