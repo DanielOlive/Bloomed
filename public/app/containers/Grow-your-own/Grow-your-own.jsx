@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Filterbar } from '../index';
+import { Filterbar } from '../../components/index';
 import loadDirectory from '../../lib/grow-your-own-service';
 
 class GrowYourOwn extends React.Component {

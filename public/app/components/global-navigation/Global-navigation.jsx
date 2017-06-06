@@ -15,7 +15,7 @@ const GlobalNav = () => (
         <Link to="/dashboard">Dashboard</Link>
       </li>
       <li>
-        <Link to="/growyourown">Grow your own</Link>
+        <Link to="/growyourown">Grow Your Own</Link>
       </li>
       <li>
         <Link to="/Settings">Settings</Link>

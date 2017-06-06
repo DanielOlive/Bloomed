@@ -42,25 +42,19 @@ module.exports = {
     extensions: ['.js', '.jsx'],
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx?$/,
         loaders: ['babel-loader', 'eslint-loader'],
         exclude: /node_modules/,
       },
       {
-        test: /\.s?css$/,
-        loader: ExtractTextPlugin.extract({
-          loader: [
-            { loader: 'css-loader' },
-            { loader: 'sass-loader', options: {
-              sourceMap: true,
-              includePaths: [
-                path.resolve(__dirname, 'node_modules/foundation/scss'),
-              ]
-            }},
-          ],
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: ["css-loader", "sass-loader"]
         }),
+        include: path.join(__dirname, "public"),
       },
     ],
   },

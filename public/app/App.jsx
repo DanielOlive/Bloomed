@@ -1,13 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
-import {
-  GlobalNav,
-  Footer,
-  GrowYourOwn,
-  ProductOverview,
-  NotFound
-} from './components/index';
+import { GlobalNav, Footer, NotFound } from './components/index';
+
+import { GrowYourOwn, ProductOverview } from './containers/index';
 
 const Home = () => <h1>Home</h1>;
 const Settings = () => <h1>Settings</h1>;
