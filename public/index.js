@@ -4,7 +4,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
-// import reducers from './reducers/index';
+import { testreducer } from './app/reducers/';
 import App from './app/App';
 
 const middleWare = [ thunk ];
@@ -13,8 +13,7 @@ if (process.env.NODE_ENV !== 'production') {
   middleWare.push(createLogger());
 }
 
-const reducer = (state = {}) => state;
-const store = createStore(reducer, applyMiddleware(...middleWare));
+const store = createStore(testreducer, applyMiddleware(...middleWare));
 
 ReactDOM.render(
   <Provider store={store}>

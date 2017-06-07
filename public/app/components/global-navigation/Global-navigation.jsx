@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './_global-navigation.scss';
-
+// import './_global-navigation.scss';
 const GlobalNav = () => (
   <div className="global-navigation top-bar">
     <div className="top-bar-title">
