@@ -1,2 +1,6 @@
-export { default as testreducer } from './testreducer';
-export { default as reducetest } from './testreducer';
+import { combineReducers } from 'redux';
+import testreducer from './testreducer';
+
+const reducer = combineReducers({ testreducer });
+
+export default reducer;
