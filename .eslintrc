@@ -1,16 +1,38 @@
 {
   parser: "babel-eslint",
   "rules": {
-    "max-len": [1, 120, 2, {ignoreComments: true}],
+    "max-len": [
+      1,
+      120,
+      2,
+      {
+        ignoreComments: true
+      }
+    ],
     /*"prop-types": [2]*/
-    "react/jsx-uses-vars": [2],
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/jsx-uses-vars": [
+      2
+    ],
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
     "react/no-children-prop": off,
     "no-confusing-arrow": "error"
   },
   "globals": {
     "document": false
   },
-  "extends": ["airbnb", "prettier" ],
-  "plugins": ["react"]
+  "extends": [
+    "airbnb",
+    "prettier"
+  ],
+  "plugins": [
+    "react"
+  ]
 }

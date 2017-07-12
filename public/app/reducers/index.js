@@ -1,6 +1,14 @@
 import { combineReducers } from 'redux';
-import testreducer from './testreducer';
+import {
+  directoryHasErrored,
+  directoryIsLoading,
+  directory
+} from './grow-your-own-reducer';
 
-const reducer = combineReducers({ testreducer });
+const reducer = combineReducers({
+  directory,
+  directoryHasErrored,
+  directoryIsLoading
+});
 
 export default reducer;

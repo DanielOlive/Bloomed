@@ -45,7 +45,7 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
-        loaders: ['babel-loader', 'eslint-loader'],
+        loaders: ['babel-loader'],
         exclude: /node_modules/,
       },
       {
@@ -54,8 +54,11 @@ module.exports = {
           fallback: "style-loader",
           use: ["css-loader", "sass-loader"]
         }),
-        include: path.join(__dirname, "public"),
+        include: [
+          path.join(__dirname, "public"),
+          "/node_modules/foundation-sites/scss/"],
       },
+
     ],
   },
   plugins: [HtmlWebpackPluginConfig, extractScss, PrettierConfig],

@@ -1,31 +1,22 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
+//import { bindActionCreators } from 'redux';
 import { Link } from 'react-router-dom';
-import { Filterbar } from '../../components/index';
-import loadDirectory from '../../lib/grow-your-own-service';
+import { connect } from 'react-redux';
 
-class GrowYourOwn extends React.Component {
-  // ...
-  constructor() {
-    super();
-    this.state = { showGrid: false, directory: [], types: [] };
-  }
+// import { Filterbar } from '../../components/index';
+// import loadDirectory from '../../lib/grow-your-own-service';
+import { directoryFetchData } from '../../actions/grow-your-own-actions';
 
+class GrowYourOwn extends Component {
   componentDidMount() {
-    loadDirectory().then(data => {
-      const directory = data.data;
-      const types = directory
-        .map(item => item.type)
-        .filter((elem, index, self) => index === self.indexOf(elem));
-
-      this.setState({ directory, types });
-    });
+    this.props.fetchData('http://localhost:4000/directory');
   }
 
   render() {
+    const { directory } = this.props;
     return (
       <div className="row">
-        <Filterbar types={this.state.types} />
-        {this.state.directory.map(
+        {directory.map(
           item /* eslint no-underscore-dangle: ["error", { "allow": ["_id"] }]*/ => (
             <div className="small-6 columns" key={item._id}>
               <div>{item.type}</div>
@@ -41,4 +32,28 @@ class GrowYourOwn extends React.Component {
   }
 }
 
-export default GrowYourOwn;
+GrowYourOwn.defaultProps = { directory: [] };
+
+// prettier-ignore
+/* GrowYourOwn.propTypes = {
+  // eslint-disable-line react/forbid-prop-types
+  directory: PropTypes.array
+};*/
+// wraps dispatch to create nicer functions to call within our component
+/* const mapDispatchToProps = dispatch => ({
+ dispatch: dispatch,
+ startup: () => dispatch(StartupActions.startup())
+ });*/
+const mapStateToProps = state => {
+  return {
+    directory: state.directory,
+    hasError: state.directoryHasErrored,
+    isLoading: state.directoryIsLoading
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return { fetchData: url => dispatch(directoryFetchData(url)) };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(GrowYourOwn);
